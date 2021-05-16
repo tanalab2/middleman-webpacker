@@ -5,7 +5,7 @@ module MiddlemanWebpacker
   class Extension < ::Middleman::Extension
 
     option :development_webpack_cmd, './node_modules/webpack/bin/webpack.js ' \
-      '--watch -d --progress --color --config config/webpack/development.js',
+      '--watch --devtool eval-cheap-module-source-map --progress --color --config config/webpack/development.js',
       'command to run webpack in development mode'
     option :production_webpack_cmd, 'NODE_ENV=production ./node_modules/webpack/bin/webpack.js ' \
       '--bail --config config/webpack/production.js',
