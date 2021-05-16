@@ -36,7 +36,7 @@ Then you need to provide your Webpack configuration inside the `config` folder. 
 The extension provides the following configuration options:
 
 * `development_webpack_cmd`
-(default: './node_modules/webpack/bin/webpack.js --watch -d --progress --color --config config/webpack/development.js')\
+(default: './node_modules/webpack/bin/webpack.js --watch --devtool eval-cheap-module-source-map --progress --color --config config/webpack/development.js')\
 command to run webpack in development mode
 
 * `production_webpack_cmd`
@@ -52,7 +52,7 @@ Base path where stylesheets will be placed inside dist_path.
 * `javascripts_base_path` (default: '')\
 Base path where javascripts will be placed inside dist_path.
 
-* `images_base_path` (default: 'img/')\
+* `images_base_path` (default: 'images/')\
 Base path where images will be placed inside dist_path.
 
 ### Manifest
