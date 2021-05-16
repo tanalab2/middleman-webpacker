@@ -13,7 +13,7 @@ module MiddlemanWebpacker
     option :dist_path, 'dist', 'Output directory configured in Webpack'
     option :stylesheets_base_path, '', 'Base path where stylesheets will be placed inside dist_path'
     option :javascripts_base_path, '', 'Base path where javascripts will be placed inside dist_path'
-    option :images_base_path, 'img/', 'Base path where images will be placed inside dist_path'
+    option :images_base_path, 'images/', 'Base path where images will be placed inside dist_path'
 
     self.defined_helpers = [MiddlemanWebpacker::Helpers]
 
@@ -25,11 +25,6 @@ module MiddlemanWebpacker
     end
 
     def after_configuration
-      @app.ignore /stylesheets/
-      @app.ignore /javascripts/
-      @app.ignore /images/
-      @app.ignore /fonts/
-
       @app.activate :external_pipeline,
         name: :webpack,
         command: @app.build? ? options.production_webpack_cmd : options.development_webpack_cmd,
